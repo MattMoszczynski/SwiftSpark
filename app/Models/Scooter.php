@@ -16,10 +16,9 @@ use Illuminate\Support\Carbon;
  *
  * @property string $serial_number
  * @property ScooterStatusEnum $status
- * @property string|null $location
- * @property int $battery_level
  * @property float $latitude
  * @property float $longitude
+ * @property int $battery_level
  * @property Carbon|null $last_maintenance_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
