@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Enums\ZoneTypeEnum;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\ArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -39,5 +41,15 @@ class Zone extends Model
             'type' => ZoneTypeEnum::class,
             'coordinates' => AsArrayObject::class,
         ];
+    }
+
+    #[Scope]
+    protected function search(Builder $query, array $filters): Builder
+    {
+        if (array_key_exists('type', $filters)) {
+            $query->where('type', $filters['type']);
+        }
+
+        return $query;
     }
 }
