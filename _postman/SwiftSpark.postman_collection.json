@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "aa79a4b2-945b-46a9-88d5-60ce3d4337b5",
+		"name": "SwiftSpark",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11829518",
+		"_collection_link": "https://cleanscripts.postman.co/workspace/MattMoszczynski's-Workspace~f4248520-94e1-4068-8cbf-f88c7bcc0694/collection/11829518-aa79a4b2-945b-46a9-88d5-60ce3d4337b5?action=share&source=collection_link&creator=11829518"
+	},
+	"item": [
+		{
+			"name": "List Zones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swift-spark.test/api/zones",
+					"protocol": "http",
+					"host": [
+						"swift-spark",
+						"test"
+					],
+					"path": [
+						"api",
+						"zones"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "parking",
+							"description": "no_ride, parking",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Zone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://swift-spark.test/api/zones/:id",
+					"protocol": "http",
+					"host": [
+						"swift-spark",
+						"test"
+					],
+					"path": [
+						"api",
+						"zones",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Zone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"parking\",\r\n    \"coordinates\": [\r\n        {\r\n            \"lat\": 50,\r\n            \"long\": 18\r\n        },\r\n        {\r\n            \"lat\": 50,\r\n            \"long\": 18\r\n        },\r\n        {\r\n            \"lat\": 50,\r\n            \"long\": 18\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://swift-spark.test/api/zones",
+					"protocol": "http",
+					"host": [
+						"swift-spark",
+						"test"
+					],
+					"path": [
+						"api",
+						"zones"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "parking",
+							"description": "no_ride, parking",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Zone",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"parking\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://swift-spark.test/api/zones/:id",
+					"protocol": "http",
+					"host": [
+						"swift-spark",
+						"test"
+					],
+					"path": [
+						"api",
+						"zones",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Zone",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://swift-spark.test/api/zones/:id",
+					"protocol": "http",
+					"host": [
+						"swift-spark",
+						"test"
+					],
+					"path": [
+						"api",
+						"zones",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
