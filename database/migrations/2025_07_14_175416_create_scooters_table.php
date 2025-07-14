@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('serial_number')->unique();
             $table->enum('status', ScooterStatusEnum::values())
-                ->default(ScooterStatusEnum::INACTIVE->value);
+                ->default(ScooterStatusEnum::Inactive->value);
             $table->float('latitude');
             $table->float('longitude');
             $table->smallInteger('battery_level')

@@ -10,9 +10,9 @@ enum ScooterStatusEnum: string
 {
     use EnumHelpers;
 
-    case AVAILABLE = 'available';
-    case INACTIVE = 'inactive';
-    case IN_USE = 'in_use';
-    case MAINTENANCE = 'maintenance';
-    case LOST = 'lost';
+    case Available = 'available';
+    case Inactive = 'inactive';
+    case InUse = 'in_use';
+    case Maintenance = 'maintenance';
+    case Lost = 'lost';
 }

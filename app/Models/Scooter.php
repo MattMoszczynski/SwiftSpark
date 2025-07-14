@@ -39,7 +39,7 @@ class Scooter extends Model
     ];
 
     protected $attributes = [
-        'status' => ScooterStatusEnum::INACTIVE->value,
+        'status' => ScooterStatusEnum::Inactive->value,
         'battery_level' => 100,
     ];
 

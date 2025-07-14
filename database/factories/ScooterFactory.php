@@ -35,7 +35,7 @@ class ScooterFactory extends Factory
     public function available(): static
     {
         return $this->state(fn () => [
-            'status' => ScooterStatusEnum::AVAILABLE,
+            'status' => ScooterStatusEnum::Available->value,
         ]);
     }
 
