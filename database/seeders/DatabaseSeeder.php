@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ScooterSeeder::class,
             RideSeeder::class,
+            ZoneSeeder::class,
         ]);
     }
 }
