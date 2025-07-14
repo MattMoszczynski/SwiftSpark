@@ -9,16 +9,16 @@ Route::get('zones', [ZoneController::class, 'index'])
     ->name('zones.index');
 
 Route::get('zones/{zone}', [ZoneController::class, 'show'])
-        ->name('zones.show');
+    ->name('zones.show');
 
 Route::post('zones', [ZoneController::class, 'store'])
     ->name('zones.store');
-// ->middleware('auth:sanctum');
+// ->middleware('auth:sanctum'); TODO: Uncomment when AuthController is ready
 
-Route::put('zones/{zone}', [ZoneController::class, 'update'])
+Route::patch('zones/{zone}', [ZoneController::class, 'update'])
     ->name('zones.update');
-// ->middleware('auth:sanctum');
+// ->middleware('auth:sanctum'); TODO: Uncomment when AuthController is ready
 
 Route::delete('zones/{zone}', [ZoneController::class, 'destroy'])
     ->name('zones.destroy');
-// ->middleware('auth:sanctum');
+// ->middleware('auth:sanctum'); TODO: Uncomment when AuthController is ready

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SearchZoneRequest;
+use App\Http\Requests\StoreZoneRequest;
+use App\Http\Requests\UpdateZoneRequest;
 use App\Http\Resources\ZoneResource;
 use App\Models\Zone;
 use Illuminate\Http\JsonResponse;
@@ -25,14 +27,18 @@ class ZoneController extends Controller
         return new ZoneResource($zone);
     }
 
-    public function store()
+    public function store(StoreZoneRequest $request): JsonResponse
     {
-        abort(JsonResponse::HTTP_NOT_IMPLEMENTED);
+        $zone = Zone::create($request->validated());
+
+        return new JsonResponse(new ZoneResource($zone), status: JsonResponse::HTTP_CREATED);
     }
 
-    public function update(Zone $zone)
+    public function update(UpdateZoneRequest $request, Zone $zone): JsonResponse
     {
-        abort(JsonResponse::HTTP_NOT_IMPLEMENTED);
+        $zone->update($request->validated());
+
+        return new JsonResponse(new ZoneResource($zone), status: JsonResponse::HTTP_OK);
     }
 
     public function destroy(Zone $zone): JsonResponse
